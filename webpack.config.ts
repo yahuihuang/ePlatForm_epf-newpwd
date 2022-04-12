@@ -4,7 +4,7 @@ import dep from 'package.json';
 export const webpackConfig: Configuration = {
   output: {
     publicPath: 'http://127.0.0.1:4201/',
-    uniqueName: 'epf-newpwd',
+    uniqueName: 'orders',
   },
   experiments: {
     topLevelAwait: true,
@@ -14,11 +14,12 @@ export const webpackConfig: Configuration = {
   },
   plugins: [
     new container.ModuleFederationPlugin({
-      name: 'epfnewpwd',
-      library: { type: 'var', name: 'epfnewpwd', },
-      filename: 'remoteEpfNewpwd.js',
+      name: 'orders',
+      library: { type: 'var', name: 'orders' },
+      filename: 'remoteOrders.js',
       exposes: {
-        EpfNewPwdModule: './src/app/module1/module1.module.ts'
+        OrderModule: './src/app/order/order.module.ts',
+        OrderComponent: './src/app/order/order.component.ts'
       },
       shared: {
         '@angular/core': {
