@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order.component.less']
 })
 export class OrderComponent implements OnInit {
-
   selectedTab = 0;
   orderComplete = false;
 
