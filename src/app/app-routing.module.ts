@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'restaurants',
     loadChildren: () => mfe.loadRemoteFile({
       remoteName: "restaurant",
-      remoteEntry: `http://127.0.0.1:4202/remoteRestaurant.js`,
+      remoteEntry: `http://testepf.test.com.tw:4202/remoteRestaurant.js`,
       exposedFile: "RestaurantModule",
       exposeFileType: FileType.Module
     }).then((m) => m.RestaurantModule),
@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'rootapps',
     loadChildren: () => mfe.loadRemoteFile({
       remoteName: "rootapp",
-      remoteEntry: `http://127.0.0.1:4200/remoteRootapp.js`,
+      remoteEntry: `http://testepf.test.com.tw:4200/remoteRootapp.js`,
       exposedFile: "RootappModule",
       exposeFileType: FileType.Module
     }).then((m) => m.RootappModule),
