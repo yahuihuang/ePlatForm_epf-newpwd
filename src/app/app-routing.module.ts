@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FileType, MfeUtil } from '@ddggroup/angular-lib';
+import { environment } from '../environments/environment';
+
+console.log('remoteEntry_Rootapp: ' + environment.remoteEntry_Rootapp)
+console.log('remoteEntry_Orders: ' + environment.remoteEntry_Orders)
+console.log('remoteEntry_Restaurant: ' + environment.remoteEntry_Restaurant)
 
 export const mfe = new MfeUtil();
 
@@ -13,7 +18,7 @@ const routes: Routes = [
     path: 'restaurants',
     loadChildren: () => mfe.loadRemoteFile({
       remoteName: "restaurant",
-      remoteEntry: `https://epf-account.web.app/remoteRestaurant.js`,
+      remoteEntry: environment.remoteEntry_Restaurant,
       exposedFile: "RestaurantModule",
       exposeFileType: FileType.Module
     }).then((m) => m.RestaurantModule),
@@ -22,7 +27,7 @@ const routes: Routes = [
     path: 'rootapps',
     loadChildren: () => mfe.loadRemoteFile({
       remoteName: "rootapp",
-      remoteEntry: `https://epf-rootapp.web.app/remoteRootapp.js`,
+      remoteEntry: environment.remoteEntry_Rootapp,
       exposedFile: "RootappModule",
       exposeFileType: FileType.Module
     }).then((m) => m.RootappModule),
