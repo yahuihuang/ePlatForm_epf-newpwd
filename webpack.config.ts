@@ -4,7 +4,7 @@ import dep from 'package.json';
 
 export const webpackConfig: Configuration = {
   output: {
-    publicPath: 'https://epf-newpwd.web.app/',
+    publicPath: (process.env['publicpath'] == undefined) ? "https://epf-newpwd.web.app/" : process.env['publicpath'],
     uniqueName: 'orders',
   },
   experiments: {
