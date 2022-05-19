@@ -26,6 +26,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+### 本機安裝
+npm install ..\angular-lib\dist\@ddggroup\angular-lib\ddggroup-angular-lib-0.0.3.tgz
+### 從GitLab下載
+#### 編輯 C:\Users\[user]\.npmrc
+#### 新增
+//gitlab.xxxx.com.tw:8088/api/v4/projects/31/packages/npm/:_authToken=[GitLab Token]
+//gitlab.xxxx.com.tw:8088/api/v4/packages/npm/:_authToken=[GitLab Token]
+@ddggroup:registry=http://gitlab.xxxx.com.tw:8088/api/v4/packages/npm/
+#### 執行
+npm install --save @ddggroup/angular-lib
+
 ## 設定環境變數
 $Env:publicpath = "http://127.0.0.1:4201/"
 $Env:remoteEntry_rootapp = "http://127.0.0.1:4200/remoteRootapp.js"
@@ -33,6 +44,13 @@ $Env:remoteentry_orders = "http://127.0.0.1:4201/remoteOrders.js"
 $Env:remoteentry_restaurant = "http://127.0.0.1:4202/remoteRestaurant.js"
 ng serve --host 127.0.0.1 --live-reload false --configuration development
 Ref. https://codinglatte.com/posts/angular/using-os-environment-variables-in-angular-with-docker/
+
+或指定domain
+$Env:publicpath = "http://testepf.test.com.tw:4201/"
+$Env:remoteEntry_rootapp = "http://testepf.test.com.tw:4200/remoteRootapp.js"
+$Env:remoteentry_orders = "http://testepf.test.com.tw:4201/remoteOrders.js"
+$Env:remoteentry_restaurant = "http://testepf.test.com.tw:4202/remoteRestaurant.js"
+ng serve --host testepf.test.com.tw --live-reload false --configuration development
 
 ## 佈署Firebase hosting
 npm i -g firebase-tools
