@@ -50,7 +50,7 @@ $Env:publicpath = "http://testepf.test.com.tw:4201/"
 $Env:remoteEntry_rootapp = "http://testepf.test.com.tw:4200/remoteRootapp.js"
 $Env:remoteentry_orders = "http://testepf.test.com.tw:4201/remoteOrders.js"
 $Env:remoteentry_restaurant = "http://testepf.test.com.tw:4202/remoteRestaurant.js"
-ng serve --host testepf.test.com.tw --live-reload false --configuration development
+ng serve --host testepf.test.com.tw --live-reload false --configuration development --disable-host-check
 
 ## 佈署Firebase hosting
 npm i -g firebase-tools
